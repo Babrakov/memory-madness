@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1r65lcb3pbld"]
+[gd_scene load_steps=3 format=3 uid="uid://d1r65lcb3pbld"]
 
 [ext_resource type="LabelSettings" uid="uid://bb475bkqlpx44" path="res://assets/LG_84_Green.tres" id="1_2465f"]
+[ext_resource type="PackedScene" uid="uid://wsva18f5h81g" path="res://scenes/front_sprite/front_sprite.tscn" id="2_ivbcn"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -53,6 +54,22 @@ size_flags_vertical = 3
 [node name="HBoxSprites" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 48
+
+[node name="FrontSprite" parent="ColorRect/VBoxContainer/HBoxSprites" instance=ExtResource("2_ivbcn")]
+layout_mode = 2
+
+[node name="FrontSprite2" parent="ColorRect/VBoxContainer/HBoxSprites" instance=ExtResource("2_ivbcn")]
+layout_mode = 2
+
+[node name="FrontSprite3" parent="ColorRect/VBoxContainer/HBoxSprites" instance=ExtResource("2_ivbcn")]
+layout_mode = 2
+
+[node name="FrontSprite4" parent="ColorRect/VBoxContainer/HBoxSprites" instance=ExtResource("2_ivbcn")]
+layout_mode = 2
+
+[node name="FrontSprite5" parent="ColorRect/VBoxContainer/HBoxSprites" instance=ExtResource("2_ivbcn")]
+layout_mode = 2
 
 [node name="Spacer" type="Control" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
