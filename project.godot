@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 
 ImageManager="*res://singletones/image_manager.gd"
 GameManager="*res://singletones/game_manager.gd"
+SignalManager="*res://singletones/signal_manager.gd"
 
 [display]
 
