@@ -30,4 +30,6 @@ func on_level_selected(level_num: int) -> void:
 
 
 func _on_exit_button_pressed() -> void:
+	for tile in tc.get_children():
+		tile.queue_free()
 	SignalManager.on_game_exit_pressed.emit()
