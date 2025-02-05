@@ -3,6 +3,7 @@ extends Control
 const MEMORY_TILE = preload("res://scenes/memory_tile/memory_tile.tscn")
 
 @onready var tc: GridContainer = $HB/MC/TC
+@onready var scorer: Scorer = $Scorer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +28,8 @@ func on_level_selected(level_num: int) -> void:
 	
 	for im in ld.get_selected_level_images():
 		add_memory_tile(im, frame)
+	
+	scorer.clear_new_game(ld.get_target_pairs())
 
 
 func _on_exit_button_pressed() -> void:
