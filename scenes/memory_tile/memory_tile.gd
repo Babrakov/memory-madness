@@ -25,8 +25,14 @@ func setup(image: ItemImage, frame: Texture2D) -> void:
 
 func kill_on_success () -> void:
 	z_index = 1
-	scale = Vector2.ZERO
-
+	var tween: Tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "disabled", true, 0)
+	tween.tween_property(self, "rotation_degrees", 720, 0.5)
+	tween.tween_property(self, "scale", Vector2(1.5,1.5), 0.5)
+	tween.set_parallel(false)
+	tween.tween_interval(0.6)
+	tween.tween_property(self, "scale", Vector2.ZERO, 0)
 
 func on_selection_disabled() -> void:
 	_can_select_me = false
