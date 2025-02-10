@@ -51,3 +51,9 @@ func _on_reveal_timer_timeout() -> void:
 			tile.reveal(false)
 	_selections.clear()
 	SignalManager.on_selection_enabled.emit()
+
+func get_moves_made_str() -> String:
+	return str(_moves_made)
+
+func get_pairs_made_str() -> String:
+	return "%d/%d" % [_pairs_made, _target_pairs]

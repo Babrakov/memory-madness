@@ -4,6 +4,8 @@ const MEMORY_TILE = preload("res://scenes/memory_tile/memory_tile.tscn")
 
 @onready var tc: GridContainer = $HB/MC/TC
 @onready var scorer: Scorer = $Scorer
+@onready var label_moves: Label = $HB/MC2/VB/HB/LabelMoves
+@onready var label_pairs: Label = $HB/MC2/VB/HB2/LabelPairs
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	label_moves.text = scorer.get_moves_made_str()
+	label_pairs.text = scorer.get_pairs_made_str()
 
 func add_memory_tile(image: ItemImage, frame: Texture2D) -> void:
 	var nt: MemoryTile = MEMORY_TILE.instantiate()
