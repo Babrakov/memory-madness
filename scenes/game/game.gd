@@ -6,6 +6,7 @@ const MEMORY_TILE = preload("res://scenes/memory_tile/memory_tile.tscn")
 @onready var scorer: Scorer = $Scorer
 @onready var label_moves: Label = $HB/MC2/VB/HB/LabelMoves
 @onready var label_pairs: Label = $HB/MC2/VB/HB2/LabelPairs
+@onready var sound: AudioStreamPlayer = $Sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,4 +39,5 @@ func on_level_selected(level_num: int) -> void:
 func _on_exit_button_pressed() -> void:
 	for tile in tc.get_children():
 		tile.queue_free()
+	SoundManager.play_button_click(sound)
 	SignalManager.on_game_exit_pressed.emit()
